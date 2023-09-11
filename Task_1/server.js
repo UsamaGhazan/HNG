@@ -2,6 +2,9 @@ import express from 'express';
 const server = express();
 import moment from 'moment/moment.js';
 
+server.get('/', (req, res) => {
+  res.send('Hello, World!'); // You can replace this with your desired response
+});
 server.get('/api', (req, res) => {
   const slack_name = req.query.slack_name;
   const track = req.query.track;
@@ -12,7 +15,7 @@ server.get('/api', (req, res) => {
     slack_name: slack_name,
     current_day: currentDay,
     utc_time: utcTime,
-    track: 'backend',
+    track: track,
     github_file_url:
       'https://github.com/UsamaGhazan/HNG/blob/main/Task_1/server.js',
     github_repo_url: 'https://github.com/UsamaGhazan/HNG/tree/main',
